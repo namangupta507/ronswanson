@@ -41,22 +41,37 @@ const App = () => {
       <div className="row">
        
       {savedQuotes.length > 0 ? (
-  savedQuotes.map((q, index) => (
-    <div className="accordion" id="accordionExample" key={index}>
-     <div className="accordion-item">
-            <h2 className="accordion-header" id="headingOne">
-              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+  savedQuotes.map((q, index) => {
+    const uniqueId = `accordion-${index}`;
+    return (
+      <div className="accordion" id={`${uniqueId}-parent`} key={index}>
+        <div className="accordion-item">
+          <h2 className="accordion-header" id={`heading-${uniqueId}`}>
+            <button
+              className="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target={`#collapse-${uniqueId}`}
+              aria-expanded="true"
+              aria-controls={`collapse-${uniqueId}`}
+            >
               {index}
-              </button>
-            </h2>
-            <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div className="accordion-body">
-                <p>{q}</p>
-              </div>
+            </button>
+          </h2>
+          <div
+            id={`collapse-${uniqueId}`}
+            className="accordion-collapse collapse"
+            aria-labelledby={`heading-${uniqueId}`}
+            data-bs-parent={`#${uniqueId}-parent`}
+          >
+            <div className="accordion-body">
+              <p>{q}</p>
             </div>
           </div>
+        </div>
       </div>
-  ))
+    );
+  })
         ) : (
           <p className="no-saved-quotes">No saved quotes</p>
         )}
