@@ -1,0 +1,67 @@
+/* src/QuoteCard.css */
+.quote-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .quote-card p {
+    font-size: 1.2em;
+    margin-bottom: 16px;
+    height: fit-content;
+    letter-spacing: 1px;
+    line-height: 27px;
+}
+  
+.new-quote-button {
+    background-color: #008CBA;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 145px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}
+  
+
+.save-quote-button {
+    background-color: #00ba72;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 145px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+  
+
+
+@media only screen and (max-width: 600px) {
+    
+    .save-quote-button {
+        width: 104px;
+        height: 30px;
+        font-size: 11px
+    }
+
+    .new-quote-button {
+        width: 104px;
+        height: 30px;
+        font-size: 11px
+    }
+
+}
